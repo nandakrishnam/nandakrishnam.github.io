@@ -1,6 +1,6 @@
 # nandakrishnam.github.io
 
-Personal website of **Nandakrishna M**, an Offensive Security Consultant and bug bounty hunter from Kerala, India.
+Portflio website of **Nandakrishna M**, an Offensive Security Consultant and bug bounty hunter from Kerala, India.
 
 **Live site:** https://nandakrishnam.github.io/
 
