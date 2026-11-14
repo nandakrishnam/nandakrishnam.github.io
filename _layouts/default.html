@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% include head.html %}
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="particles" aria-hidden="true"></div>
+
+{% include header.html %}
+
+  <main class="container page">
+    {{ content }}
+  </main>
+
+  <a href="#" class="to-top" aria-label="Go to top of page"><span aria-hidden="true">&uarr;</span> Go to top</a>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year">2026</span> Nandakrishna M</p>
+  </footer>
+
+  <script src="/assets/js/main.js?v=6"></script>
+</body>
+</html>

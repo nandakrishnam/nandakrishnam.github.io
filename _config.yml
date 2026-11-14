@@ -1,0 +1,33 @@
+title: Nandakrishna M
+tagline: Offensive Security Consultant
+description: "Nandakrishna M - Offensive Security Consultant and bug bounty hunter from Kerala, India. Web, API, AI/LLM agent and network penetration testing."
+author:
+  name: Nandakrishna M
+  twitter: be_astra
+lang: en_US
+logo: /assets/img/og-image.png
+twitter:
+  username: be_astra
+  card: summary_large_image
+social:
+  name: Nandakrishna M
+  links:
+    - https://github.com/nandakrishnam
+    - https://x.com/be_astra
+    - https://www.linkedin.com/in/nandakrishna-m/
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+url: https://nandakrishnam.github.io
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+exclude:
+  - README.md
+  - blog/README.md
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/img/og-image.png

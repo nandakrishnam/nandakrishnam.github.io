@@ -1,0 +1,24 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{ site.title | xml_escape }} - Blog</title>
+  <subtitle>{{ site.description | xml_escape }}</subtitle>
+  <link href="{{ '/feed.xml' | absolute_url }}" rel="self"/>
+  <link href="{{ '/blog/' | absolute_url }}"/>
+  <id>{{ '/blog/' | absolute_url }}</id>
+  <author><name>{{ site.author.name | xml_escape }}</name></author>
+  {% assign posts = site.pages | where: "layout", "post" | sort: "date" | reverse %}
+  <updated>{% if posts.size > 0 %}{{ posts.first.date | date_to_xmlschema }}{% else %}{{ site.time | date_to_xmlschema }}{% endif %}</updated>
+  {% for post in posts limit: 20 %}
+  <entry>
+    <title>{{ post.title | xml_escape }}</title>
+    <link href="{{ post.url | absolute_url }}"/>
+    <id>{{ post.url | absolute_url }}</id>
+    <updated>{{ post.date | date_to_xmlschema }}</updated>
+    {% if post.description %}<summary>{{ post.description | xml_escape }}</summary>{% endif %}
+    <content type="html">{{ post.content | markdownify | xml_escape }}</content>
+  </entry>
+  {% endfor %}
+</feed>

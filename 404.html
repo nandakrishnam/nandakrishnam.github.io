@@ -1,0 +1,34 @@
+---
+layout: default
+title: Page not found
+permalink: /404.html
+sitemap: false
+---
+<section class="notfound">
+  <div class="terminal">
+    <div class="terminal-bar"><span></span><span></span><span></span><p>~/404</p></div>
+    <div class="terminal-body">
+      <p><span class="accent">r00t@nandakrishna</span><span class="muted">:~$</span> cd <span id="nf-path">/this-page</span></p>
+      <p class="nf-error">bash: cd: <span id="nf-path-2">/this-page</span>: No such file or directory</p>
+      <p><span class="accent">r00t@nandakrishna</span><span class="muted">:~$</span> echo $?</p>
+      <p class="nf-code glitch" data-text="404">404</p>
+      <p><span class="accent">r00t@nandakrishna</span><span class="muted">:~$</span> ls ~</p>
+      <ul class="nf-links">
+        <li><a href="/">home/</a></li>
+        <li><a href="/#about">about/</a></li>
+        <li><a href="/#certs">certs/</a></li>
+        <li><a href="/#hof">hof/</a></li>
+        <li><a href="/blog/">blog/</a></li>
+        <li><a href="/#contact">contact/</a></li>
+      </ul>
+      <p><span class="accent">r00t@nandakrishna</span><span class="muted">:~$</span> <span class="cursor" aria-hidden="true">_</span></p>
+    </div>
+  </div>
+</section>
+<script>
+  (function () {
+    var p = decodeURIComponent(location.pathname).slice(0, 80);
+    document.getElementById('nf-path').textContent = p;
+    document.getElementById('nf-path-2').textContent = p;
+  })();
+</script>
