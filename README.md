@@ -32,15 +32,6 @@ Personal website of **Nandakrishna M**, an Offensive Security Consultant and bug
 └── _config.yml         # site settings
 ```
 
-## Publishing a blog post
-
-1. Copy `blog/_template/` to a new folder, e.g. `blog/my-first-writeup/`.
-2. Edit the title, date, description and tags at the top of `index.md`, then write the post in Markdown.
-3. Put any screenshots in the same folder and use `![alt text](image.png)`.
-4. Commit and push to `main`. The post goes live at `/blog/my-first-writeup/` in about a minute.
-
-More detail is in [`blog/README.md`](blog/README.md).
-
 ## Contact
 
 [LinkedIn](https://www.linkedin.com/in/nandakrishna-m/) · [X](https://x.com/be_astra) · [GitHub](https://github.com/nandakrishnam). My email is on the [website](https://nandakrishnam.github.io/#contact).
