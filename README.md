@@ -31,7 +31,3 @@ Personal website of **Nandakrishna M**, an Offensive Security Consultant and bug
 ├── feed.xml            # RSS/Atom feed for the blog
 └── _config.yml         # site settings
 ```
-
-## Contact
-
-[LinkedIn](https://www.linkedin.com/in/nandakrishna-m/) · [X](https://x.com/be_astra) · [GitHub](https://github.com/nandakrishnam). My email is on the [website](https://nandakrishnam.github.io/#contact).
