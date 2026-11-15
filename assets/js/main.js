@@ -90,7 +90,7 @@ if (field && field.getContext) {
     twinkle: 0.3,
     hoverFactor: 1,       // parallax strength
     cameraDistance: 20,
-    color: '255, 255, 255',
+    color: '239, 68, 68',  // site red (#ef4444)
   };
 
   const ctx = field.getContext('2d');
