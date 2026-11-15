@@ -210,3 +210,11 @@ if (field && field.getContext) {
     });
   }
 }
+
+// Scroll cue: hide it as soon as the visitor scrolls down, show it again at the top
+const scrollCue = document.querySelector('.scroll-cue');
+if (scrollCue) {
+  const updateCue = () => scrollCue.classList.toggle('is-hidden', window.scrollY > 60);
+  window.addEventListener('scroll', updateCue, { passive: true });
+  updateCue();
+}
