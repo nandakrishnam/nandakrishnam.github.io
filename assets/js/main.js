@@ -218,17 +218,3 @@ if (scrollCue) {
   window.addEventListener('scroll', updateCue, { passive: true });
   updateCue();
 }
-
-// Hero stats: count up from 0 on load (numbers are already in the HTML for no-JS visitors)
-const statNums = document.querySelectorAll('.stat-num[data-count]');
-if (statNums.length && !reduceMotion) {
-  const t0 = performance.now(), dur = 1400, delay = 600;
-  const ease = t => 1 - Math.pow(1 - t, 3);
-  statNums.forEach(el => { el.textContent = '0'; });
-  const step = now => {
-    const p = Math.min(Math.max((now - t0 - delay) / dur, 0), 1);
-    statNums.forEach(el => { el.textContent = Math.round(ease(p) * Number(el.dataset.count)); });
-    if (p < 1) requestAnimationFrame(step);
-  };
-  requestAnimationFrame(step);
-}
