@@ -109,6 +109,58 @@
     bauble('#ff4d5e', 110, 'right', '23%', -0.3);
   }
 
+  // ---- Decorated Christmas trees in the hero's bottom corners ----
+  function tree(side, scale) {
+    var gid = 'xt' + Math.random().toString(36).slice(2, 8);
+    var bulbs = [
+      [50, 48, '#ff4d5e'], [42, 70, '#ffd166'], [60, 74, '#00d9ff'],
+      [32, 100, '#39ff8a'], [52, 104, '#ff4d5e'], [70, 98, '#c77dff'],
+      [24, 134, '#ffd166'], [44, 138, '#00d9ff'], [64, 136, '#39ff8a'], [80, 130, '#ff4d5e'],
+      [18, 166, '#c77dff'], [38, 172, '#ff4d5e'], [58, 170, '#ffd166'], [78, 166, '#00d9ff']
+    ];
+    var b = '';
+    bulbs.forEach(function (p, i) {
+      b += '<circle class="xmas-tree-bulb" cx="' + p[0] + '" cy="' + p[1] + '" r="3.2" fill="' + p[2] +
+        '" style="--bulb:' + p[2] + ';animation-delay:' + (i % 4) * 0.4 + 's"/>';
+    });
+    var el = document.createElement('div');
+    el.className = 'xmas-hero-tree xmas-hero-tree-' + side;
+    el.setAttribute('aria-hidden', 'true');
+    el.style.setProperty('--s', scale);
+    el.innerHTML =
+      '<svg viewBox="0 0 100 210">' +
+        '<defs><linearGradient id="' + gid + '" x1="0" y1="0" x2="1" y2="0">' +
+          '<stop offset="0" stop-color="#0f5f35"/><stop offset="0.55" stop-color="#1f9d55"/>' +
+          '<stop offset="1" stop-color="#0b4a29"/></linearGradient></defs>' +
+        '<rect x="43" y="182" width="14" height="22" rx="2" fill="#5b3a21"/>' +
+        '<path d="M50 30 L86 92 Q70 88 64 90 L94 140 Q76 134 68 138 L98 186 Q50 178 2 186 L32 138 Q24 134 6 140 L36 90 Q30 88 14 92 Z" fill="url(#' + gid + ')"/>' +
+        '<path d="M28 86 Q50 98 74 84 M18 128 Q50 146 84 126 M10 174 Q50 192 92 172" stroke="#d4af37" stroke-width="1.6" fill="none" stroke-dasharray="3 3" opacity="0.85"/>' +
+        '<path d="M50 30 L60 52 Q50 48 40 52 Z M40 92 Q50 96 62 92 L58 86 Q50 90 42 86 Z" fill="#f4f7fb" opacity="0.8"/>' +
+        b +
+        '<polygon class="xmas-tree-star" points="50,6 55,19 69,19 58,27 62,41 50,33 38,41 42,27 31,19 45,19" fill="#ffd166"/>' +
+        '<rect x="20" y="192" width="20" height="14" rx="2" fill="#e11d2e"/><rect x="28" y="192" width="4" height="14" fill="#ffd166"/>' +
+        '<rect x="62" y="196" width="16" height="10" rx="2" fill="#00a6c7"/><rect x="68" y="196" width="4" height="10" fill="#f4f7fb"/>' +
+      '</svg>';
+    hero.appendChild(el);
+  }
+  if (hero) {
+    tree('left', 1);
+    tree('right', 0.85);
+  }
+
+  // ---- Snowy pine skyline above the footer ----
+  if (footer) {
+    var pines = '';
+    for (var k = 0; k < 24; k++) {
+      var x = k * 50 + (k % 2) * 12, h = 30 + ((k * 37) % 28);
+      pines += '<path d="M' + (x + 20) + ' ' + (70 - h) + ' L' + (x + 38) + ' 70 L' + (x + 2) + ' 70 Z" fill="' + (k % 3 ? '#123524' : '#17442e') + '"/>' +
+        '<path d="M' + (x + 20) + ' ' + (70 - h) + ' L' + (x + 25) + ' ' + (70 - h + 10) + ' L' + (x + 15) + ' ' + (70 - h + 10) + ' Z" fill="#f4f7fb" opacity="0.85"/>';
+    }
+    footer.insertAdjacentHTML('afterbegin',
+      '<svg class="xmas-pines" viewBox="0 0 1200 76" preserveAspectRatio="xMidYMax slice" aria-hidden="true">' +
+        pines + '<rect x="0" y="68" width="1200" height="8" fill="#f4f7fb" opacity="0.9"/></svg>');
+  }
+
   // ---- Holly sprigs on section titles ----
   var holly =
     '<svg class="xmas-holly" viewBox="0 0 34 22" aria-hidden="true">' +
