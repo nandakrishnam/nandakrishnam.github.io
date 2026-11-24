@@ -154,18 +154,6 @@
   50%      { transform: rotate(-5deg); }
 }
 
-/* Countdown */
-.xmas-countdown {
-  font-size: 0.85rem;
-  color: var(--muted);
-  margin-top: -4px;
-}
-.xmas-cd-val {
-  color: #ffd166;
-  text-shadow: 0 0 10px rgba(255, 209, 102, 0.45);
-  font-variant-numeric: tabular-nums;
-}
-
 /* Holly on section titles */
 .xmas-holly {
   width: 30px;

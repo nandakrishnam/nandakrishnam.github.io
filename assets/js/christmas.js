@@ -109,32 +109,6 @@
     bauble('#ff4d5e', 110, 'right', '23%', -0.3);
   }
 
-  // ---- Christmas countdown in the hero ----
-  var greeting = document.querySelector('.xmas-greeting');
-  if (greeting) {
-    var cd = document.createElement('p');
-    cd.className = 'xmas-countdown';
-    greeting.insertAdjacentElement('afterend', cd);
-    var pad = function (n) { return (n < 10 ? '0' : '') + n; };
-    var renderCountdown = function () {
-      var now = new Date();
-      var y = now.getFullYear();
-      var xmas = new Date(y, 11, 25);
-      if (now >= new Date(y, 11, 26)) xmas = new Date(y + 1, 11, 25);
-      if (now >= xmas && now < new Date(xmas.getFullYear(), 11, 26)) {
-        cd.innerHTML = '<span class="accent">$</span> ./xmas --countdown <span class="xmas-cd-val">🎁 it’s today! Merry Christmas!</span>';
-        return;
-      }
-      var s = Math.floor((xmas - now) / 1000);
-      var d = Math.floor(s / 86400), h = Math.floor(s % 86400 / 3600),
-          m = Math.floor(s % 3600 / 60), sec = s % 60;
-      cd.innerHTML = '<span class="accent">$</span> ./xmas --countdown ' +
-        '<span class="xmas-cd-val">' + d + 'd ' + pad(h) + 'h ' + pad(m) + 'm ' + pad(sec) + 's</span> 🎅';
-    };
-    renderCountdown();
-    setInterval(renderCountdown, 1000);
-  }
-
   // ---- Holly sprigs on section titles ----
   var holly =
     '<svg class="xmas-holly" viewBox="0 0 34 22" aria-hidden="true">' +
