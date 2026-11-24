@@ -139,21 +139,6 @@
 
 /* ---------- Extra decorations (round 2) ---------- */
 
-/* Hanging baubles in the hero corners */
-.xmas-bauble {
-  position: absolute;
-  top: 0;
-  width: 40px;
-  transform-origin: 20px 0;
-  animation: xmas-swing 3.6s ease-in-out infinite;
-  pointer-events: none;
-  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.45));
-}
-@keyframes xmas-swing {
-  0%, 100% { transform: rotate(5deg); }
-  50%      { transform: rotate(-5deg); }
-}
-
 /* Holly on section titles */
 .xmas-holly {
   width: 30px;
@@ -204,10 +189,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .xmas-bauble, .xmas-sleigh, .xmas-sleigh span { animation: none; }
+  .xmas-sleigh, .xmas-sleigh span { animation: none; }
 }
 @media (max-width: 700px) {
-  .xmas-bauble { transform: scale(0.7); animation: none; }
-  .xmas-bauble.xmas-mob-hide { display: none; }
   .xmas-sleigh { font-size: 1.25rem; }
 }

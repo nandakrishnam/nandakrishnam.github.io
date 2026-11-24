@@ -79,36 +79,6 @@
     footer.appendChild(f);
   }
 
-  // ---- Hanging baubles in the hero corners ----
-  var hero = document.querySelector('.hero');
-  function bauble(color, len, side, offset, delay) {
-    var id = 'xg' + Math.random().toString(36).slice(2, 8);
-    var el = document.createElement('div');
-    el.className = 'xmas-bauble' + (parseFloat(offset) > 12 ? ' xmas-mob-hide' : '');
-    el.setAttribute('aria-hidden', 'true');
-    el.style.cssText = side + ':' + offset + ';--len:' + len + 'px;animation-delay:' + delay + 's';
-    el.innerHTML =
-      '<svg viewBox="0 0 40 ' + (len + 46) + '" width="40" height="' + (len + 46) + '">' +
-        '<defs><radialGradient id="' + id + '" cx="35%" cy="35%" r="70%">' +
-          '<stop offset="0" stop-color="#fff" stop-opacity="0.9"/>' +
-          '<stop offset="0.25" stop-color="' + color + '"/>' +
-          '<stop offset="1" stop-color="#0d1420"/></radialGradient></defs>' +
-        '<line x1="20" y1="0" x2="20" y2="' + len + '" stroke="#8a9bb4" stroke-width="1"/>' +
-        '<rect x="15" y="' + len + '" width="10" height="7" rx="1.5" fill="#d4af37"/>' +
-        '<circle cx="20" cy="' + (len + 24) + '" r="16" fill="url(#' + id + ')"/>' +
-        '<path d="M6 ' + (len + 24) + ' Q20 ' + (len + 30) + ' 34 ' + (len + 24) + '" stroke="rgba(255,255,255,0.35)" stroke-width="2" fill="none"/>' +
-      '</svg>';
-    hero.appendChild(el);
-  }
-  if (hero) {
-    bauble('#ff4d5e', 40, 'left', '4%', 0);
-    bauble('#39ff8a', 90, 'left', '12%', -1.2);
-    bauble('#ffd166', 20, 'left', '20%', -0.6);
-    bauble('#00d9ff', 70, 'right', '6%', -0.9);
-    bauble('#c77dff', 30, 'right', '15%', -1.8);
-    bauble('#ff4d5e', 110, 'right', '23%', -0.3);
-  }
-
   // ---- Holly sprigs on section titles ----
   var holly =
     '<svg class="xmas-holly" viewBox="0 0 34 22" aria-hidden="true">' +
