@@ -201,24 +201,6 @@
   setTimeout(sleighRide, 4000);
   setInterval(sleighRide, 28000);
 
-  // ---- Click anywhere for a burst of snowflakes ----
-  var glyphs = ['❄', '❅', '❆', '✦'];
-  document.addEventListener('click', function (e) {
-    for (var i = 0; i < 10; i++) {
-      var f = document.createElement('span');
-      f.className = 'xmas-burst';
-      f.textContent = glyphs[i % glyphs.length];
-      var ang = (Math.PI * 2 * i) / 10 + Math.random() * 0.5;
-      var dist = 40 + Math.random() * 50;
-      f.style.left = e.clientX + 'px';
-      f.style.top = e.clientY + 'px';
-      f.style.setProperty('--dx', Math.cos(ang) * dist + 'px');
-      f.style.setProperty('--dy', Math.sin(ang) * dist + 'px');
-      f.style.color = i % 3 === 0 ? '#ff4d5e' : (i % 3 === 1 ? '#f4f7fb' : '#39ff8a');
-      document.body.appendChild(f);
-      f.addEventListener('animationend', function () { this.remove(); });
-    }
-  });
 
   var canvas = document.createElement('canvas');
   canvas.className = 'xmas-snow';
