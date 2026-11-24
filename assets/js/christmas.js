@@ -40,6 +40,17 @@
       '</svg>');
   }
 
+  // ---- Santa hat on the hero name (tilted over the "N") ----
+  var heroName = document.querySelector('.name-glitch');
+  if (heroName) {
+    heroName.insertAdjacentHTML('beforeend',
+      '<svg class="xmas-hat xmas-hat-name" viewBox="0 0 26 22" aria-hidden="true">' +
+        '<path d="M3 17 C6 6 13 1 21 4 C18 6 17 10 18 17 Z" fill="#e11d2e"/>' +
+        '<rect x="1" y="15.5" width="19" height="5" rx="2.5" fill="#f4f7fb"/>' +
+        '<circle cx="22" cy="5" r="3" fill="#f4f7fb"/>' +
+      '</svg>');
+  }
+
   // ---- Hero greeting ----
   var tagline = document.querySelector('.hero-tagline');
   if (tagline) {

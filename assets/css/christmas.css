@@ -76,6 +76,17 @@
   filter: drop-shadow(0 0 4px rgba(239, 68, 68, 0.5));
 }
 
+/* Santa hat on the hero name, sized in em so it scales with the heading */
+.xmas-hat.xmas-hat-name {
+  left: -0.22em;
+  top: -0.42em;
+  width: 0.8em;
+  height: 0.68em;
+  transform: rotate(-20deg);
+  z-index: 1;
+  filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.55));
+}
+
 /* Hero greeting */
 .xmas-greeting {
   margin-top: 14px;
